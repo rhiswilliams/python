@@ -31,7 +31,7 @@ if random.random() < 0.5:
 else:
     x0 -= 1
     
-print ("x0 is " + str(x0), ", y0 is " + str(y0))
+print ("y0 is " + str(y0), ", x0 is " + str(x0))
 
 # Assign variables - random number from 0 to 99
 y1 = random.randint(0,99)
@@ -48,7 +48,7 @@ if random.random() < 0.5:
 else:
     x1 -= 1
     
-print ("x1 is " + str(x1), ", y1 is " + str(y1))
+print ("y1 is " + str(y1), ", x1 is " + str(x1))
 
 
 
