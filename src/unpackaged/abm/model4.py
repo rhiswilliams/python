@@ -3,7 +3,14 @@
 import random
 # import operator
 import matplotlib.pyplot
+# import time
 
+# Test time - start
+# start = time.clock()
+
+# Define distance_between coordinates
+def distance_between(agents_row_a, agents_row_b):
+    return(((agents_row_a[0]-agents_row_b[0])**2) + ((agents_row_a[1]-agents_row_b[1])**2))**0.5
 
 
 
@@ -49,10 +56,23 @@ for j in range(num_of_iterations):
 # Print agents list
 print("The co-ordinates are " + str(agents))
 
+
+
+
+
+# Work out the distance between co-ordinates
+# Loop through all co-ordinate combinations
+
+for agents_row_a in agents:
+    for agents_row_b in agents:
+        distance = distance_between(agents_row_a, agents_row_b)
+        # print("The distance is " + str(distance))
+
+
+
 # Print furthest east co-ordinate - largest x value
 # largest_x = (max(agents, key=operator.itemgetter(1)))
 # print("The co-ordinate furthest east is " + str(largest_x))
-
 
 
 
@@ -70,28 +90,11 @@ for i in range(num_of_agents):
 # Show graph
 matplotlib.pyplot.show()
 
+"""
+#Test time - end and print
+end = time.clock()
+print("time = " + str(end - start))"""
 
-
-
-# Working out the distance between sets of co-ordinates
-# Find difference between x0 and x1
-# Square the x difference
-# Find difference between y0 and y1
-# Square the y difference
-# Add the x difference square and the y difference square
-# Square root the result
-
-
-"""x_dist = x0 - x1
-x_dist_sq = (x_dist)**2
-
-y_dist = y0 - y1
-y_dist_sq = (y_dist)**2
-
-radicand = (x_dist_sq) + (y_dist_sq)
-
-overall_distance = (radicand)**0.5
-print ("The distance between the coordinates is " + str(overall_distance))"""
 
 
 
