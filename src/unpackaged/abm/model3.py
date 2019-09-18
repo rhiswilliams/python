@@ -35,7 +35,7 @@ for j in range(num_of_iterations):
         if random.random() < 0.5:
             agents[i][0] = (agents[i][0] + 1) % 100
         else:
-            agents[i][0] = (agents[i][0] + 1) % 100
+            agents[i][0] = (agents[i][0] - 1) % 100
 
 # Random walk x co-ordinate 100 steps
 for j in range(num_of_iterations):
@@ -43,7 +43,7 @@ for j in range(num_of_iterations):
         if random.random() < 0.5:
             agents[i][1] = (agents[i][1] + 1) % 100
         else:
-            agents[i][1] = (agents[i][1] + 1) % 100
+            agents[i][1] = (agents[i][1] - 1) % 100
         
 
 # Print agents list
