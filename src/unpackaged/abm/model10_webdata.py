@@ -99,7 +99,7 @@ def update(frame_number):
     # When all sheep are full, run the stopping motion 
     if count_full == num_of_agents:
         carry_on = False
-        print("The sheep are full!")
+        print("All the sheep are full!")
         
         
         # Calculate how much the sheep have eaten in total

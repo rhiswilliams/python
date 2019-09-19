@@ -7,7 +7,6 @@ Created on Wed Sep 18 10:29:06 2019
 import random
 
 
-
 class Agent():
     
     # Set agents from data
@@ -53,6 +52,9 @@ class Agent():
     def distance_between(self, agent):
         return(((self.x - agent.x)**2) +
     ((self.y - agent.y)**2))**0.5
+
+  
+
     
     # Define share with neighbours
     # Agents share if the distance between them is less than neighbourhood
@@ -64,6 +66,7 @@ class Agent():
                 ave = sum_stores/2
                 self.store = ave
                 agent.store = ave
+
 
                 
 
