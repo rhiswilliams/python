@@ -44,8 +44,9 @@ class Agent():
     # Eat between 1 and 10 units
     def eat(self):
         if self.environment[self.y][self.x] > 10:
-            self.environment[self.y][self.x] -= 10
-            self.store += random.randint(1,10)
+            grass_amount = random.randint(1,10)
+            self.environment[self.y][self.x] -= (grass_amount)
+            self.store += (grass_amount)
     
     # Calculate distance between agents
     

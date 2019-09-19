@@ -81,11 +81,13 @@ def update(frame_number):
     # Add environment to graph
     matplotlib.pyplot.imshow(environment)
    
+    
     # Run move, eat and share_with_neighbours for each agent
     for i in range(num_of_agents):
         agents[i].move()
         agents[i].eat()
         agents[i].share_with_neighbours(neighbourhood)
+   
     
     # Stopping condition when all sheep have eaten 150 environment
     # Set count of full sheep to 0
