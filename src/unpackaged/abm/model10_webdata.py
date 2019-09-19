@@ -110,6 +110,21 @@ def update(frame_number):
         carry_on = False
         print("All the sheep are full!")
         
+        # If sheep have eaten 165 or more they are overfull
+        # Find and return number of overfull sheep
+        overfull_sheep = []
+        for i in range(num_of_agents):
+            if agents[i].store >= 165:
+                overfull_sheep.insert(0, agents[i])
+        if len(overfull_sheep) == 1:
+            print ("Only 1 sheep is too full and needs a nap.")
+        if len(overfull_sheep) > 1:
+            print (str(len(overfull_sheep)) + " are too full and need a nap.")
+        else:
+            print("No sheep are too full.")
+        
+                
+
             
         # Calculate how much the sheep have eaten in total
         grass_eaten = []
