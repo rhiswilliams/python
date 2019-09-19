@@ -123,8 +123,11 @@ def update(frame_number):
         else:
             print("No sheep are too full.")
         
-                
-
+        # Show how much each sheep has eaten
+        # Tests overfull_sheep and grass_eaten
+        #for i in range(num_of_agents):
+            #print(agents[i].store)
+        
             
         # Calculate how much the sheep have eaten in total
         grass_eaten = []
