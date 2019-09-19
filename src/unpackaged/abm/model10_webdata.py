@@ -48,6 +48,7 @@ f.close()
 num_of_agents = 10
 neighbourhood = 20
 
+
 # Create empty agents list to add co-ordinates to
 agents=[]
 
@@ -89,6 +90,14 @@ def update(frame_number):
         agents[i].share_with_neighbours(neighbourhood)
    
     
+    # If a sheep eats too much (over 170), they are sick and go back to 150
+    
+    for i in range(num_of_agents):
+        if agents[i].store >= 175:
+            agents[i].store = 150
+            print('A sheep was sick!')
+
+    
     # Stopping condition when all sheep have eaten 150 environment
     # Set count of full sheep to 0
     count_full = 0
@@ -101,7 +110,7 @@ def update(frame_number):
         carry_on = False
         print("All the sheep are full!")
         
-        
+            
         # Calculate how much the sheep have eaten in total
         grass_eaten = []
         for agent in agents:

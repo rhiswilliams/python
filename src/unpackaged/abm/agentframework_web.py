@@ -46,6 +46,11 @@ class Agent():
             grass_amount = random.randint(1,10)
             self.environment[self.y][self.x] -= (grass_amount)
             self.store += (grass_amount)
+            
+    def sick(self):
+        if self.store > 120:
+            self.store = 0
+            print('A sheep was sick!')
     
     # Calculate distance between agents
     
