@@ -10,10 +10,17 @@ import random
 
 class Agent():
     
-    # Set random agents
-    def __init__ (self, environment, agents):
-        self.x = random.randint(0,299)
-        self.y = random.randint(0,299)
+    # Set agents from data
+    # If a data point is none, set random integer
+    def __init__ (self, environment, agents, x=None, y=None):
+        if (x == None):
+            self.x = random.randint(0,299)
+        else:
+            self.x = x
+        if (y == None):
+            self.y = random.randint(0,299)
+        else:
+            self.y = y
         self.environment=environment
         self.store = 0
         self.agents=agents
