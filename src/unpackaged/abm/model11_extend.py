@@ -95,10 +95,8 @@ def update(frame_number):
         agents[i].eat()
         agents[i].share_with_neighbours(neighbourhood)
         agents[i].close_to_plant(plants, plant_radius)
-   
-            
 
-    
+
     # Stopping condition when all sheep have eaten 150 environment
     # Set count of full sheep to 0
     count_full = 0
@@ -119,7 +117,7 @@ def update(frame_number):
                 overfull_sheep.insert(0, agents[i])
         if len(overfull_sheep) == 1:
             print ("Only 1 sheep is too full and needs a nap.")
-        if len(overfull_sheep) > 1:
+        elif len(overfull_sheep) > 1:
             print (str(len(overfull_sheep)) + " are too full and need a nap.")
         else:
             print("No sheep are too full.")
