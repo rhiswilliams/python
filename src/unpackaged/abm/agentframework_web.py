@@ -46,20 +46,19 @@ class Agent():
             grass_amount = random.randint(1,10)
             self.environment[self.y][self.x] -= (grass_amount)
             self.store += (grass_amount)
-            
-    def sick(self):
-        if self.store > 120:
-            self.store = 0
-            print('A sheep was sick!')
     
     # Calculate distance between agents
-    
     def distance_between(self, agent):
         return(((self.x - agent.x)**2) +
     ((self.y - agent.y)**2))**0.5
 
   
-
+    def close_to_plant(self, plants, plant_radius):
+        for plant in plants:
+            dist = (((self.x - plant[0])**2) + ((self.y - plant[1])**2))**0.5
+            if dist <= plant_radius:
+                self.store -= 30
+                print('A sheep has eaten a poisonous plant! The sheep was sick.')
     
     # Define share with neighbours
     # Agents share if the distance between them is less than neighbourhood
