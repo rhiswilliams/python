@@ -55,13 +55,14 @@ plant_radius = 2
 agents=[]
 plants=[]
 
-# Get 10 sets of co-ordinates from data
+# Get 10 sets of agent co-ordinates from data
 for i in range(num_of_agents):
     y = int(td_ys[i].text)
     x = int(td_xs[i].text)
     agents.append(agentframework_web.Agent(environment, agents, x, y))
     # print(x,y)
 
+# Get 10 random sets of plant co-ordinates
 for j in range(num_of_plants):
     plants.append([random.randint(0,99),random.randint(0,99)])
 
@@ -88,7 +89,7 @@ def update(frame_number):
     matplotlib.pyplot.imshow(environment)
    
     
-    # Run move, eat and share_with_neighbours for each agent
+    # Run move, eat, share_with_neighbours, and close_to_plant for each agent
     for i in range(num_of_agents):
         agents[i].move()
         agents[i].eat()
@@ -96,8 +97,6 @@ def update(frame_number):
         agents[i].close_to_plant(plants, plant_radius)
    
             
-      
-
 
     
     # Stopping condition when all sheep have eaten 150 environment
@@ -141,6 +140,7 @@ def update(frame_number):
     # Plot the agent co-ordinates
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
+    # Plot the plant co-ordinates in black
     for j in range(num_of_plants):
         matplotlib.pyplot.scatter(plants[j][1], plants[j][0], color='black')
 

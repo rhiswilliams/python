@@ -53,6 +53,8 @@ class Agent():
     ((self.y - agent.y)**2))**0.5
 
   
+    # Calculate distance between plants and agents
+    # If distance < plant_radius, sheep is sick and store decreases by 30
     def close_to_plant(self, plants, plant_radius):
         for plant in plants:
             dist = (((self.x - plant[0])**2) + ((self.y - plant[1])**2))**0.5
