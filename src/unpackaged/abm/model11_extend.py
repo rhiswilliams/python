@@ -137,7 +137,7 @@ def update(frame_number):
     
     # Plot the agent co-ordinates
     for i in range(num_of_agents):
-        matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
+        matplotlib.pyplot.scatter(agents[i].x, agents[i].y, color='white')
     # Plot the plant co-ordinates in black
     for j in range(num_of_plants):
         matplotlib.pyplot.scatter(plants[j][1], plants[j][0], color='black')
@@ -150,15 +150,11 @@ def gen_function(b = [0]):
         yield a
         a = a + 1
 
-# Add animation
-# animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
-
-
 # Add GUI
 # Crete function 'run' to begin update loop
 def run():
     animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
-    canvas.show()
+    canvas.draw()
 
 # Create figure
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
